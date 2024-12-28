@@ -1,6 +1,7 @@
-const giftIdeaMsg = "İptal: Exist\n\nEnter your christmas gift idea:"
+const giftIdeaMsg = "İptal: Exist\n\nEnter your christmas gift idea:";
 const invalidEntry = "Invalid Entry, Try again.";
-const continueMsg = "İptal: Exist\n\nDo you want to continue: (Y/N)"
+const alreadyExist = "Your input already exist.";
+const continueMsg = "İptal: Exist\n\nDo you want to continue: (Y/N)";
 const exited = "You exited from app.";
 const options = ["y", "n"];
 
@@ -21,6 +22,11 @@ function giftIdea() {
 
   if (!value) {
     alert(invalidEntry);
+    return giftIdea();
+  }
+
+  if(ideas.includes(value)){
+    alert(alreadyExist);
     return giftIdea();
   }
 
